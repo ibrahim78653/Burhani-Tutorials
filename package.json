@@ -1,0 +1,11 @@
+{
+  "name": "burhani-tutorials-portal",
+  "version": "1.0.0",
+  "description": "Burhani Tutorials — Student Board Form & Document Submission Portal",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "start:server": "cd server && npm start",
+    "build:client": "cd client && npm run build"
+  }
+}
