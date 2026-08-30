@@ -563,6 +563,11 @@
   flex-wrap: wrap;
 }
 
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
 /* ── 3. STATS BANNER SECTION ── */
 .stats-banner-section {
   background: #0f2238;
@@ -1159,9 +1164,15 @@
 }
 
 .branch-actions {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+}
+
+.branch-actions .btn {
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
 }
 
 /* ── 8. GALLERY SECTION ── */
@@ -1344,6 +1355,16 @@
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+.nav-btn-white {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+.nav-btn-white:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .trial-icon-burst {
@@ -1836,6 +1857,10 @@
   .stat-divider {
     display: none;
   }
+  /* Hero: hide visual column on mobile to remove blank space */
+  .hero-visual-col {
+    display: none;
+  }
   .hero-action-buttons {
     flex-direction: column;
     align-items: stretch;
@@ -1854,6 +1879,15 @@
   .section-center-header {
     margin-bottom: 36px;
   }
+  /* About CTA buttons: full-width stacked */
+  .about-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
   .teachers-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
@@ -1868,17 +1902,43 @@
   .branches-grid {
     grid-template-columns: 1fr;
   }
+  /* Branch action buttons: full-width stacked on mobile */
+  .branch-actions {
+    flex-direction: column;
+  }
+  .branch-actions .btn {
+    width: 100%;
+    flex: none;
+  }
   .gateway-card {
     padding: 20px;
   }
   .gateway-grid {
     grid-template-columns: 1fr;
   }
+  /* Trial banner: stack buttons full-width */
   .trial-banner-card {
     padding: 24px 20px;
   }
   .trial-banner-title {
     font-size: 1.6rem;
+  }
+  .trial-banner-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .trial-banner-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  /* Contact CTA buttons: full-width stacked */
+  .contact-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contact-cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
   }
   .footer-top-grid {
     grid-template-columns: 1fr;
@@ -1890,5 +1950,26 @@
   .stats-banner-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  /* Gallery filter tabs: single horizontal scrollable row */
+  .gallery-filter-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    /* Extend to screen edges for a natural feel */
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .gallery-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-tab {
+    flex-shrink: 0;
   }
 }
