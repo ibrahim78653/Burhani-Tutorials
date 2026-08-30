@@ -540,10 +540,17 @@ export default function Landing() {
           <div className="branches-grid">
             {BRANCHES.map((branch) => (
               <div key={branch.id} className="branch-card">
-                <div className="branch-img-box">
-                  <img src={branch.image} alt={branch.name} className="branch-photo" />
-                  <div className="branch-badge-overlay">{branch.shortName}</div>
-                </div>
+                {branch.image ? (
+                  <div className="branch-img-box">
+                    <img src={branch.image} alt={branch.name} className="branch-photo" />
+                    <div className="branch-badge-overlay">{branch.shortName}</div>
+                  </div>
+                ) : (
+                  <div className="branch-header-placeholder">
+                    <div className="branch-placeholder-badge">{branch.shortName}</div>
+                    <div className="branch-placeholder-icon">🏛️</div>
+                  </div>
+                )}
 
                 <div className="branch-card-body">
                   <h3 className="branch-title">{branch.name}</h3>
@@ -603,7 +610,7 @@ export default function Landing() {
 
           {/* Category Filter Tabs */}
           <div className="gallery-filter-tabs">
-            {['All', 'Teachers’ Day', 'Institute', 'Classrooms', 'Teaching', 'Branches'].map((cat) => (
+            {['All', ...Array.from(new Set(GALLERY_ITEMS.map((item) => item.category)))].map((cat) => (
               <button
                 key={cat}
                 type="button"
