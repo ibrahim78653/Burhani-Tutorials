@@ -111,9 +111,9 @@ export default function AppointmentModal({ isOpen, onClose, initialBranch = '', 
 
   return (
     <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-container appointment-modal-container" onClick={(e) => e.stopPropagation()}>
         {/* Modal Header */}
-        <div className="modal-header">
+        <div className="modal-header appointment-modal-header">
           <div className="modal-brand-badge">
             <span className="modal-brand-dot" />
             Burhani Tutorials • Since 1996

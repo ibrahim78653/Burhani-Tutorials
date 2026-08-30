@@ -52,3 +52,14 @@
   color: var(--color-accent-dark);
   font-size: 1.8rem;
 }
+
+@media (max-width: 640px) {
+  .free-session-highlight-box {
+    padding: 10px 12px;
+    margin-bottom: 16px;
+  }
+  .free-session-highlight-box p {
+    font-size: 0.80rem;
+    line-height: 1.4;
+  }
+}

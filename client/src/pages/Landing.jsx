@@ -48,6 +48,7 @@ export default function Landing() {
   const [galleryCategory, setGalleryCategory] = useState('All');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [showAllGallery, setShowAllGallery] = useState(false);
 
   // Filtered gallery items
   const filteredGallery = galleryCategory === 'All'
@@ -623,7 +624,7 @@ export default function Landing() {
           </div>
 
           {/* Responsive Gallery Grid */}
-          <div className="gallery-grid">
+          <div className={`gallery-grid${showAllGallery ? ' gallery-show-all' : ''}`}>
             {filteredGallery.map((item, idx) => (
               <div
                 key={item.id}
@@ -654,6 +655,17 @@ export default function Landing() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* View All button — mobile only */}
+          <div className="gallery-view-all-wrap">
+            <button
+              type="button"
+              className="gallery-view-all-btn"
+              onClick={() => setShowAllGallery((prev) => !prev)}
+            >
+              {showAllGallery ? '✕ Collapse Gallery' : '🖼️ View All Photos'}
+            </button>
           </div>
         </div>
       </section>
