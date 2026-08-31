@@ -1,7 +1,12 @@
+/* ============================================================
+   STUDENT PROFILE — Modern Design
+   ============================================================ */
+
+/* ── BANNER BODY ── */
 .student-banner-body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
   text-align: center;
 }
@@ -14,10 +19,11 @@
   }
 }
 
+/* ── PHOTO ── */
 .student-banner-photo-wrap {
   position: relative;
-  width: 120px;
-  height: 150px;
+  width: 110px;
+  height: 140px;
   flex-shrink: 0;
 }
 
@@ -25,44 +31,48 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-accent);
-  box-shadow: var(--shadow-sm);
+  border-radius: 14px;
+  border: 2px solid rgba(200, 169, 110, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  transition: transform var(--transition);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .student-banner-photo:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .student-banner-photo-placeholder {
   width: 100%;
   height: 100%;
-  background: var(--color-bg);
-  border: 2px dashed var(--color-border);
-  border-radius: var(--radius-md);
+  background: #f0f4f8;
+  border: 2px dashed #d0dae6;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  color: var(--color-text-muted);
+  color: #7c8fa6;
 }
 
 .student-banner-badge {
   position: absolute;
-  bottom: -8px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 0.72rem;
+  background: #0a1628;
+  color: #c8a96e;
+  font-size: 0.68rem;
   font-weight: 700;
-  padding: 2px 10px;
-  border-radius: var(--radius-full);
+  padding: 3px 12px;
+  border-radius: 20px;
   white-space: nowrap;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(200, 169, 110, 0.2);
 }
 
+/* ── MAIN INFO ── */
 .student-banner-main {
   flex: 1;
   width: 100%;
@@ -79,14 +89,16 @@
 @media (min-width: 768px) {
   .student-banner-header {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
 .student-banner-name {
   font-size: 1.5rem;
-  color: var(--color-primary);
-  margin-bottom: 4px;
+  color: #0f2238;
+  margin-bottom: 6px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .student-banner-meta {
@@ -95,7 +107,7 @@
   gap: 8px;
   align-items: center;
   font-size: 0.82rem;
-  color: var(--color-text-muted);
+  color: #7c8fa6;
   justify-content: center;
 }
 
@@ -119,10 +131,12 @@
 
 .status-select {
   min-width: 150px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   font-weight: 600;
+  border-radius: 10px;
 }
 
+/* ── QUICK PILLS ── */
 .student-quick-pills {
   display: flex;
   flex-wrap: wrap;
@@ -137,31 +151,43 @@
 }
 
 .quick-pill {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+  border-radius: 8px;
   padding: 6px 12px;
   font-size: 0.78rem;
   display: flex;
-  gap: 4px;
+  gap: 5px;
 }
 
 .qp-label {
-  color: var(--color-text-muted);
+  color: #7c8fa6;
 }
 
 .profile-subheading {
-  font-size: 0.92rem;
-  color: var(--color-primary);
-  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #1a3557;
+  margin-bottom: 12px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Documents Grid */
+.profile-subheading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8edf3;
+}
+
+/* ── DOCUMENTS GRID ── */
 .docs-profile-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 
 @media (min-width: 540px) {
@@ -177,17 +203,23 @@
 }
 
 .doc-profile-card {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.doc-profile-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 .doc-card-preview {
   height: 140px;
-  background: #e2e8f0;
+  background: #f0f4f8;
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -200,24 +232,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition);
+  transition: transform 0.3s ease;
 }
 
 .doc-card-preview:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .doc-pdf-placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--color-text-muted);
+  gap: 6px;
+  color: #7c8fa6;
 }
 
 .doc-card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(10, 22, 40, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,7 +258,8 @@
   font-size: 0.85rem;
   font-weight: 600;
   opacity: 0;
-  transition: opacity var(--transition);
+  transition: opacity 0.2s ease;
+  backdrop-filter: blur(2px);
 }
 
 .doc-card-preview:hover .doc-card-overlay {
@@ -240,17 +274,18 @@
 }
 
 .doc-card-type {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: var(--color-accent-dark);
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
+  color: #92650e;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
 }
 
 .doc-card-filename {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: #0f2238;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -259,7 +294,7 @@
 
 .doc-card-meta {
   font-size: 0.72rem;
-  color: var(--color-text-muted);
+  color: #7c8fa6;
   margin-bottom: 12px;
 }
 
@@ -269,20 +304,21 @@
   margin-top: auto;
 }
 
-/* Signature Box */
+/* ── SIGNATURE BOX ── */
 .signature-display-box {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
   padding: 16px;
 }
 
 .signature-preview-wrap {
   background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border: 1px solid #e8edf3;
+  border-radius: 10px;
   padding: 12px;
   display: inline-block;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 .signature-preview-img {
@@ -291,7 +327,7 @@
   object-fit: contain;
 }
 
-/* Modal Doc Preview */
+/* ── MODAL DOC PREVIEW ── */
 .modal-doc-preview {
   max-width: 900px;
   width: 95vw;
@@ -307,7 +343,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #0f172a;
+  background: #0a1525;
   min-height: 350px;
 }
 
@@ -316,15 +352,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 20px;
 }
 
 .modal-preview-img {
   max-width: 100%;
   max-height: 75vh;
   object-fit: contain;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
 }
 
 .modal-pdf-container {
@@ -343,7 +379,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition);
+  transition: transform 0.3s ease;
 }
 
 .doc-thumbnail-loading {
@@ -351,7 +387,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: var(--color-text-muted);
+  color: #7c8fa6;
   font-size: 0.78rem;
 }
 
@@ -360,17 +396,18 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  color: var(--color-text-muted);
+  color: #7c8fa6;
   font-size: 0.75rem;
   padding: 8px;
   text-align: center;
 }
 
 .doc-badge-pill {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #f0f4f8;
+  border: 1px solid #e8edf3;
+  color: #475569;
 }

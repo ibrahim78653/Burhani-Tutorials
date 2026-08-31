@@ -18,6 +18,7 @@ import AdminStudents from './pages/admin/AdminStudents';
 import StudentProfile from './pages/admin/StudentProfile';
 import AdminAdmissions from './pages/admin/AdminAdmissions';
 import AdmissionProfile from './pages/admin/AdmissionProfile';
+import AdminFees from './pages/admin/AdminFees';
 
 function ProtectedRoute({ children }) {
   const { isLoggedIn, loading } = useAuth();
@@ -59,6 +60,7 @@ function App() {
           <Route path="/admin/admissions/:id" element={<ProtectedRoute><AdmissionProfile /></ProtectedRoute>} />
           <Route path="/admin/students" element={<ProtectedRoute><AdminStudents /></ProtectedRoute>} />
           <Route path="/admin/students/:id" element={<ProtectedRoute><StudentProfile /></ProtectedRoute>} />
+          <Route path="/admin/fees" element={<ProtectedRoute><AdminFees /></ProtectedRoute>} />
 
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />

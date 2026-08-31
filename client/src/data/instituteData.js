@@ -62,7 +62,7 @@ export const TEACHERS = [
     id: 'yusuf-ali',
     name: 'Yusuf Ali Khargon Wala',
     role: 'Partner & Teacher',
-    image: null, // Will use actual photo when provided; elegant placeholder now
+    image: '/yusuf_ali.jpeg',
     initials: 'YA',
     focus: 'Senior Academic Guidance & Core Instruction',
     statement: 'Direct teaching and personal mentorship to bring out every student’s true potential.',
@@ -71,7 +71,7 @@ export const TEACHERS = [
     id: 'mazhar-husain',
     name: 'Mazhar Husain Darugar Wala',
     role: 'Partner & Teacher',
-    image: null, // Will use actual photo when provided; elegant placeholder now
+    image: '/mazhar_husain.jpeg',
     initials: 'MH',
     focus: 'Foundational Mastery & Academic Rigor',
     statement: 'Building conceptual clarity and strong discipline that endures throughout academic life.',

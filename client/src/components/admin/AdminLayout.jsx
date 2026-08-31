@@ -63,6 +63,30 @@ export default function AdminLayout({ children, title, subtitle, actions }) {
             <span>Dashboard</span>
           </NavLink>
           <NavLink 
+            to="/admin/fees" 
+            className={({ isActive }) => `admin-nav-item ${isActive ? 'active' : ''}`}
+            onClick={() => setSidebarOpen(false)}
+          >
+            <span className="admin-nav-icon">🧾</span>
+            <span>Fee Management</span>
+          </NavLink>
+          <NavLink 
+            to="/admin/students" 
+            className={({ isActive }) => `admin-nav-item ${isActive ? 'active' : ''}`}
+            onClick={() => setSidebarOpen(false)}
+          >
+            <span className="admin-nav-icon">🎓</span>
+            <span>Board Forms</span>
+          </NavLink>
+          <NavLink 
+            to="/admin/admissions" 
+            className={({ isActive }) => `admin-nav-item ${isActive ? 'active' : ''}`}
+            onClick={() => setSidebarOpen(false)}
+          >
+            <span className="admin-nav-icon">📝</span>
+            <span>Admission Forms</span>
+          </NavLink>
+          <NavLink 
             to="/admin/appointments" 
             className={({ isActive }) => `admin-nav-item ${isActive ? 'active' : ''}`}
             onClick={() => setSidebarOpen(false)}
@@ -78,56 +102,8 @@ export default function AdminLayout({ children, title, subtitle, actions }) {
             <span className="admin-nav-icon">✨</span>
             <span>Free Sessions</span>
           </NavLink>
-          <NavLink 
-            to="/admin/admissions" 
-            className={({ isActive }) => `admin-nav-item ${isActive ? 'active' : ''}`}
-            onClick={() => setSidebarOpen(false)}
-          >
-            <span className="admin-nav-icon">📝</span>
-            <span>Admission Forms</span>
-          </NavLink>
-          <NavLink 
-            to="/admin/students" 
-            className={({ isActive }) => `admin-nav-item ${isActive ? 'active' : ''}`}
-            onClick={() => setSidebarOpen(false)}
-          >
-            <span className="admin-nav-icon">🎓</span>
-            <span>Board Forms</span>
-          </NavLink>
 
-          <div className="admin-nav-group-label" style={{ marginTop: 20 }}>BOARD CLASSES</div>
-          <NavLink 
-            to="/admin/students?classFilter=9" 
-            className="admin-nav-item sub-item"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <span className="admin-nav-icon">📘</span>
-            <span>Class 9th Board</span>
-          </NavLink>
-          <NavLink 
-            to="/admin/students?classFilter=10" 
-            className="admin-nav-item sub-item"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <span className="admin-nav-icon">📗</span>
-            <span>Class 10th Board</span>
-          </NavLink>
-          <NavLink 
-            to="/admin/students?classFilter=11" 
-            className="admin-nav-item sub-item"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <span className="admin-nav-icon">📙</span>
-            <span>Class 11th Board</span>
-          </NavLink>
-          <NavLink 
-            to="/admin/students?classFilter=12" 
-            className="admin-nav-item sub-item"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <span className="admin-nav-icon">📕</span>
-            <span>Class 12th Board</span>
-          </NavLink>
+
         </nav>
 
         <div className="admin-sidebar-footer">

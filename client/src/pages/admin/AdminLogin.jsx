@@ -29,24 +29,46 @@ export default function AdminLogin() {
 
   return (
     <div className="admin-login-page">
+      {/* Left Branding Panel */}
       <div className="admin-login-left">
         <div className="admin-login-brand">
-          <div className="admin-login-logo"><img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" /></div>
+          <div className="admin-login-logo">
+            <img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" />
+          </div>
           <h1>Burhani Tutorials</h1>
           <p>Admin Portal</p>
         </div>
-        <div className="admin-login-tagline">
-          <blockquote>"30+ Years of Excellence in Teaching"</blockquote>
-          <cite>— 5000+ Students Successfully Passed Out</cite>
+
+        <div>
+          <div className="admin-login-divider" />
+          <div className="admin-login-tagline">
+            <blockquote>"30+ Years of Excellence in Teaching"</blockquote>
+            <cite>— 5000+ Students Successfully Passed Out</cite>
+          </div>
+          <div className="admin-login-features">
+            <div className="login-feature">
+              <span className="login-feature-dot" />
+              Manage student admissions & board forms
+            </div>
+            <div className="login-feature">
+              <span className="login-feature-dot" />
+              Track appointments & free trial sessions
+            </div>
+            <div className="login-feature">
+              <span className="login-feature-dot" />
+              Fee management & PDF export
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Right Form Panel */}
       <div className="admin-login-right">
         <div className="admin-login-card">
           <div className="admin-login-header">
-            <div className="admin-login-icon">🔐</div>
-            <h2>Admin Login</h2>
-            <p>Access the student management portal</p>
+            <div className="admin-login-icon-wrap">🔐</div>
+            <h2>Welcome Back</h2>
+            <p>Sign in to access the admin portal</p>
           </div>
 
           <form onSubmit={handleSubmit} className="admin-login-form">
@@ -58,7 +80,7 @@ export default function AdminLogin() {
                 className="form-input"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
-                placeholder="Enter username"
+                placeholder="Enter your username"
                 autoComplete="username"
                 autoFocus
               />
@@ -73,7 +95,7 @@ export default function AdminLogin() {
                   className="form-input"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  placeholder="Enter password"
+                  placeholder="Enter your password"
                   autoComplete="current-password"
                 />
                 <button type="button" className="show-pass-btn" onClick={() => setShowPass(!showPass)} aria-label={showPass ? 'Hide password' : 'Show password'}>
@@ -83,7 +105,7 @@ export default function AdminLogin() {
             </div>
 
             <button type="submit" disabled={loading} className="btn btn-primary btn-lg btn-full">
-              {loading ? <><div className="spinner spinner-sm" /> Signing in...</> : 'Sign In'}
+              {loading ? <><div className="spinner spinner-sm" /> Signing in...</> : 'Sign In →'}
             </button>
           </form>
 

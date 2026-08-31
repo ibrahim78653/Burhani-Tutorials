@@ -11,7 +11,9 @@ export default function AdminDashboard() {
   const [recentAdmissions, setRecentAdmissions] = useState([]);
   const [recentAppointments, setRecentAppointments] = useState([]);
   const [recentFreeSessions, setRecentFreeSessions] = useState([]);
+  const [recentReceipts, setRecentReceipts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showBoardClasses, setShowBoardClasses] = useState(false);
   const [exportModalOpen, setExportModalOpen] = useState(false);
   const [exportClass, setExportClass] = useState('');
   const [exportFrom, setExportFrom] = useState('');
@@ -28,6 +30,7 @@ export default function AdminDashboard() {
         setRecentAdmissions(res.data.recentAdmissions || []);
         setRecentAppointments(res.data.recentAppointments || []);
         setRecentFreeSessions(res.data.recentFreeSessions || []);
+        setRecentReceipts(res.data.recentReceipts || []);
       }
     } catch (err) {
       toast.error('Failed to load dashboard data');
@@ -94,39 +97,59 @@ export default function AdminDashboard() {
   return (
     <AdminLayout
       title="Admin Dashboard"
-      subtitle="Complete overview of student inquiries, appointments, trials, and admission forms"
       actions={
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <Link to="/admin/appointments" className="btn btn-accent btn-sm">
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: 2 }}>
+          <Link to="/admin/fees" className="btn btn-warning btn-sm" style={{ background: '#c8a96e', color: '#0f2238', fontWeight: 700, whiteSpace: 'nowrap', flexShrink: 0 }}>
+            🧾 Fees (₹{(stats?.feeTotalReceived || 0).toLocaleString('en-IN')})
+          </Link>
+          <Link to="/admin/students" className="btn btn-accent btn-sm" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
+            🎓 Board Form ({totalBoard})
+          </Link>
+          <Link to="/admin/admissions" className="btn btn-primary btn-sm" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
+            📝 Admissions ({totalAdmissions})
+          </Link>
+          <Link to="/admin/appointments" className="btn btn-accent btn-sm" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
             📅 Appointments ({totalAppointments})
           </Link>
-          <Link to="/admin/free-sessions" className="btn btn-outline btn-sm">
-            ✨ Free Trials ({totalFreeSessions})
-          </Link>
-          <Link to="/admin/admissions" className="btn btn-primary btn-sm">
-            📝 Admissions ({totalAdmissions})
+          <Link to="/admin/free-sessions" className="btn btn-outline btn-sm" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
+            ✨ Trial Session ({totalFreeSessions})
           </Link>
         </div>
       }
     >
-      {/* 4 Primary Top Level KPI Cards */}
+      {/* 5 Primary Top Level KPI Cards (Including Fee Summary) */}
       <div className="dashboard-stats-grid">
+        {/* Fee Management Summary Card */}
+        <Link
+          to="/admin/fees"
+          className="stat-card stat-card-highlight"
+          style={{ textDecoration: 'none', borderLeft: '4px solid #c8a96e', background: 'linear-gradient(135deg, #ffffff 0%, #fdf8ed 100%)' }}
+        >
+          <div style={{ flex: 1 }}>
+            <div className="stat-number" style={{ color: '#0f2238' }}>
+              ₹ {(stats?.feeTotalReceived || 0).toLocaleString('en-IN')}
+            </div>
+            <div className="stat-label" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
+              Total Fees
+            </div>
+            <div className="stat-sub" style={{ color: '#b45309' }}>
+              {stats?.feeReceiptsCount || 0} Receipts
+            </div>
+          </div>
+        </Link>
         {/* Appointments Card */}
         <Link
           to="/admin/appointments"
           className="stat-card stat-card-highlight"
           style={{ textDecoration: 'none', borderLeft: '4px solid #c8a96e' }}
         >
-          <div className="stat-icon" style={{ background: '#fef3c7', color: '#b45309' }}>
-            📅
-          </div>
           <div>
             <div className="stat-number">{totalAppointments}</div>
             <div className="stat-label" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
-              In-Person Appointments
+              Appointments
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#b45309', fontWeight: 600, marginTop: 2 }}>
-              {newAppointments} New Inquiries →
+            <div className="stat-sub" style={{ color: '#b45309' }}>
+              {newAppointments} New Inquiries
             </div>
           </div>
         </Link>
@@ -137,16 +160,13 @@ export default function AdminDashboard() {
           className="stat-card stat-card-highlight"
           style={{ textDecoration: 'none', borderLeft: '4px solid #10b981' }}
         >
-          <div className="stat-icon" style={{ background: '#ecfdf5', color: '#059669' }}>
-            ✨
-          </div>
           <div>
             <div className="stat-number">{totalFreeSessions}</div>
             <div className="stat-label" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
-              2-Day Free Sessions
+              Free Session
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#059669', fontWeight: 600, marginTop: 2 }}>
-              {newFreeSessions} New Trial Requests →
+            <div className="stat-sub" style={{ color: '#059669' }}>
+              {newFreeSessions} New Trial Requests
             </div>
           </div>
         </Link>
@@ -157,83 +177,67 @@ export default function AdminDashboard() {
           className="stat-card stat-card-highlight"
           style={{ textDecoration: 'none', borderLeft: '4px solid #3b82f6' }}
         >
-          <div className="stat-icon" style={{ background: '#eff6ff', color: '#1d4ed8' }}>
-            📝
-          </div>
           <div>
             <div className="stat-number">{totalAdmissions}</div>
             <div className="stat-label" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
               Admission Forms
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: 2 }}>
-              Classes 5th to 12th →
+            <div className="stat-sub" style={{ color: 'var(--color-text-muted)' }}>
+              Classes 5th to 12th
             </div>
           </div>
         </Link>
 
-        {/* Board Forms Card */}
-        <Link
-          to="/admin/students"
+        {/* Board Forms Card - toggles class breakdown */}
+        <div
           className="stat-card stat-card-highlight"
-          style={{ textDecoration: 'none', borderLeft: '4px solid #8b5cf6' }}
+          style={{ cursor: 'pointer', borderLeft: '4px solid #8b5cf6', userSelect: 'none' }}
+          onClick={() => setShowBoardClasses(prev => !prev)}
         >
-          <div className="stat-icon" style={{ background: '#f5f3ff', color: '#7c3aed' }}>
-            🎓
-          </div>
           <div>
             <div className="stat-number">{totalBoard}</div>
             <div className="stat-label" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
-              Board Registrations
+              Board Forms
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: 2 }}>
-              Classes 9th to 12th →
+            <div className="stat-sub" style={{ color: 'var(--color-text-muted)' }}>
+              {showBoardClasses ? '◄ Hide' : 'View ►'}
             </div>
-          </div>
-        </Link>
-      </div>
-
-      {/* Class Level Counts Grid */}
-      <div className="dashboard-stats-grid" style={{ marginTop: 16 }}>
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: '#e0f2fe', color: '#0284c7' }}>
-            📘
-          </div>
-          <div>
-            <div className="stat-number">{(stats?.admClass9 || 0) + (stats?.class9 || 0)}</div>
-            <div className="stat-label">Class 9th (Total)</div>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: '#ede9fe', color: '#7c3aed' }}>
-            📗
-          </div>
-          <div>
-            <div className="stat-number">{(stats?.admClass10 || 0) + (stats?.class10 || 0)}</div>
-            <div className="stat-label">Class 10th (Total)</div>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: '#ecfdf5', color: '#059669' }}>
-            📙
-          </div>
-          <div>
-            <div className="stat-number">{(stats?.admClass11 || 0) + (stats?.class11 || 0)}</div>
-            <div className="stat-label">Class 11th (Total)</div>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: '#fffbeb', color: '#d97706' }}>
-            📕
-          </div>
-          <div>
-            <div className="stat-number">{(stats?.admClass12 || 0) + (stats?.class12 || 0)}</div>
-            <div className="stat-label">Class 12th (Total)</div>
           </div>
         </div>
       </div>
+
+      {/* Class Level Counts - horizontal scrollable strip */}
+      {showBoardClasses && (
+        <div style={{
+          display: 'flex',
+          gap: 8,
+          overflowX: 'auto',
+          marginTop: 8,
+          paddingBottom: 4,
+          scrollbarWidth: 'none',
+        }}>
+          {[
+            { label: '9th', value: (stats?.admClass9 || 0) + (stats?.class9 || 0) },
+            { label: '10th', value: (stats?.admClass10 || 0) + (stats?.class10 || 0) },
+            { label: '11th', value: (stats?.admClass11 || 0) + (stats?.class11 || 0) },
+            { label: '12th', value: (stats?.admClass12 || 0) + (stats?.class12 || 0) },
+          ].map(cls => (
+            <div key={cls.label} style={{
+              flex: '0 0 auto',
+              background: '#fff',
+              border: '1px solid #e8edf3',
+              borderRadius: 10,
+              padding: '8px 14px',
+              minWidth: 72,
+              textAlign: 'center',
+              boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+            }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#000', lineHeight: 1.1 }}>{cls.value}</div>
+              <div style={{ fontSize: '0.58rem', fontWeight: 600, color: '#000', textTransform: 'uppercase', marginTop: 3, letterSpacing: '0.03em' }}>Class {cls.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* RECENT APPOINTMENTS WIDGET */}
       <div className="card" style={{ marginTop: 24 }}>

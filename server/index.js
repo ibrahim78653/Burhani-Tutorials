@@ -12,12 +12,15 @@ const adminRoutes = require('./routes/admin');
 const admissionRoutes = require('./routes/admissions');
 const appointmentRoutes = require('./routes/appointments');
 const freeSessionRoutes = require('./routes/freeSessions');
+const feeRoutes = require('./routes/fees');
 
 const app = express();
 
-// Ensure uploads directory exists
+// Ensure uploads directory and subdirectories exist
 const uploadsDir = path.join(__dirname, '../uploads');
+const receiptsDir = path.join(uploadsDir, 'receipts');
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+if (!fs.existsSync(receiptsDir)) fs.mkdirSync(receiptsDir, { recursive: true });
 
 // Security & middleware
 app.use(helmet({ crossOriginResourcePolicy: false }));
@@ -34,6 +37,7 @@ app.use('/api/students', studentRoutes);
 app.use('/api/admissions', admissionRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/free-sessions', freeSessionRoutes);
+app.use('/api/admin/fees', feeRoutes);
 app.use('/api/admin', adminRoutes);
 
 // Public document server for preview and attachments

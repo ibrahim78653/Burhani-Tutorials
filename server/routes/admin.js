@@ -5,6 +5,7 @@ const Student = require('../models/Student');
 const Admission = require('../models/Admission');
 const Appointment = require('../models/Appointment');
 const FreeSession = require('../models/FreeSession');
+const FeeReceipt = require('../models/FeeReceipt');
 const auth = require('../middleware/auth');
 const pdfService = require('../services/pdfService');
 const router = express.Router();
@@ -12,7 +13,7 @@ const router = express.Router();
 // All admin routes are protected
 router.use(auth);
 
-// GET /api/admin/stats - combined statistics for Board, Admission, Appointments & Free Sessions
+// GET /api/admin/stats - combined statistics for Board, Admission, Appointments, Free Sessions & Fee Management
 router.get('/stats', async (req, res) => {
   try {
     const [
@@ -20,6 +21,7 @@ router.get('/stats', async (req, res) => {
       admissionsTotal, admClass5, admClass6, admClass7, admClass8, admClass9, admClass10, admClass11, admClass12, recentAdmissions,
       appointmentsTotal, appointmentsNew, recentAppointments,
       freeSessionsTotal, freeSessionsNew, recentFreeSessions,
+      feeTuitionAgg, feeReceiptsCount, recentReceipts,
     ] = await Promise.all([
       // Board Form counts
       Student.countDocuments({ isArchived: false }),
@@ -50,7 +52,18 @@ router.get('/stats', async (req, res) => {
       FreeSession.countDocuments({ isArchived: false }),
       FreeSession.countDocuments({ isArchived: false, status: 'New' }),
       FreeSession.find({ isArchived: false }).sort({ createdAt: -1 }).limit(5).select('requestId studentName parentName classApplied branch phone status createdAt'),
+
+      // Fee Management counts and sums
+      FeeReceipt.aggregate([
+        { $match: { isArchived: false, feeType: 'TUITION_FEE' } },
+        { $group: { _id: null, total: { $sum: '$amountPaid' } } },
+      ]),
+      FeeReceipt.countDocuments({ isArchived: false }),
+      FeeReceipt.find({ isArchived: false }).sort({ createdAt: -1 }).limit(5).select('receiptNumber studentName classApplied branch feeType amountPaid invoiceDate createdAt'),
     ]);
+
+    const feeTuitionTotal = feeTuitionAgg.length > 0 ? feeTuitionAgg[0].total : 0;
+    const feeTotalReceived = feeTuitionTotal;
 
     res.json({
       success: true,
@@ -73,11 +86,15 @@ router.get('/stats', async (req, res) => {
         appointmentsNew,
         freeSessionsTotal,
         freeSessionsNew,
+        feeTuitionTotal,
+        feeTotalReceived,
+        feeReceiptsCount,
       },
       recent,
       recentAdmissions,
       recentAppointments,
       recentFreeSessions,
+      recentReceipts,
     });
   } catch (err) {
     console.error('Stats fetch error:', err);
