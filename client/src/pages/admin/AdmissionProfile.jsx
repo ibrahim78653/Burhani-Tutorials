@@ -192,7 +192,7 @@ export default function AdmissionProfile() {
             <div className="adm-header">
               {/* Logo top-left */}
               <div className="adm-header-logo">
-                <img src="/bt-logo.jpeg" alt="Burhani Tutorials" className="adm-logo-img" />
+                <img src="/bt-logo.webp" alt="Burhani Tutorials" className="adm-logo-img" />
               </div>
 
               {/* Centre text */}

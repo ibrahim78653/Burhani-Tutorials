@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import './ClassSelection.css';
 
@@ -14,6 +15,24 @@ export default function ClassSelection() {
 
   return (
     <div className="class-selection">
+      <Helmet>
+        <title>Board Exam Registration — Burhani Tutorials Indore</title>
+        <meta name="description" content="Submit your State Board examination registration form online for Class 9th, 10th, 11th, and 12th at Burhani Tutorials, Indore." />
+        <link rel="canonical" href="https://burhani-tutorials-indore.in/select-class" />
+        <meta property="og:title" content="Board Exam Registration — Burhani Tutorials Indore" />
+        <meta property="og:description" content="Online board examination registration for Class 9th to 12th at Burhani Tutorials, Indore." />
+        <meta property="og:url" content="https://burhani-tutorials-indore.in/select-class" />
+        <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://burhani-tutorials-indore.in/' },
+            { '@type': 'ListItem', position: 2, name: 'Board Exam Registration', item: 'https://burhani-tutorials-indore.in/select-class' },
+          ],
+        })}</script>
+      </Helmet>
+
       <Navbar />
       <div className="container class-sel-body">
         <div className="class-sel-header">

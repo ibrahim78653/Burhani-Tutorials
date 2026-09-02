@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /success
+
+Sitemap: https://burhani-tutorials-indore.in/sitemap.xml

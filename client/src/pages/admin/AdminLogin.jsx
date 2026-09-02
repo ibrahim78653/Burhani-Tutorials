@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 import './AdminLogin.css';
 
 export default function AdminLogin() {
@@ -29,11 +30,15 @@ export default function AdminLogin() {
 
   return (
     <div className="admin-login-page">
+      <Helmet>
+        <title>Admin Login — Burhani Tutorials</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       {/* Left Branding Panel */}
       <div className="admin-login-left">
         <div className="admin-login-brand">
           <div className="admin-login-logo">
-            <img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" />
+            <img src="/bt-logo.webp" alt="Burhani Tutorials Logo" />
           </div>
           <h1>Burhani Tutorials</h1>
           <p>Admin Portal</p>

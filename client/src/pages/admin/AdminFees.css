@@ -972,8 +972,10 @@ select.form-control:focus {
   background: #1a3557;
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
   padding: 14px 16px;
+  position: relative;
+  min-height: 94px;
 }
 
 .a4-logo-box {
@@ -987,6 +989,10 @@ select.form-control:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .a4-logo-box img {
@@ -998,6 +1004,8 @@ select.form-control:focus {
 .a4-institute-details {
   flex: 1;
   min-width: 0;
+  text-align: center;
+  padding: 0 74px;
 }
 
 .a4-institute-title {
@@ -1011,6 +1019,22 @@ select.form-control:focus {
 @media (min-width: 640px) {
   .a4-institute-title { font-size: 1.3rem; }
   .a4-logo-box { width: 72px; height: 72px; }
+  .a4-institute-details { padding: 0 84px; }
+}
+
+@media (max-width: 540px) {
+  .a4-receipt-header {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .a4-logo-box {
+    position: static;
+    transform: none;
+    margin-bottom: 8px;
+  }
+  .a4-institute-details {
+    padding: 0;
+  }
 }
 
 .a4-institute-tagline {

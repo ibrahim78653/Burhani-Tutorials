@@ -120,21 +120,21 @@ function generateFeeReceiptPDFBuffer(receipt) {
           .text('BURHANI\nTUTORIALS', logoX, logoY + 28, { width: logoW, align: 'center' });
       }
 
-      // Header Text (Center)
-      const textX = logoX + logoW + 12;
-      const textW = contentW - (logoW + 28);
+      // Header Text (Centered on receipt)
+      const textX = margin;
+      const textW = contentW;
 
       doc.fillColor(COLORS.white).fontSize(22).font('Helvetica-Bold')
         .text('BURHANI TUTORIALS', textX, margin + 14, { width: textW, align: 'center' });
 
       doc.fillColor(COLORS.accent).fontSize(9.5).font('Helvetica-Bold')
-        .text('Quality Education • Strong Foundations • Brighter Futures', textX, margin + 42, { width: textW, align: 'center' });
+        .text('An Institute of Science & Commerce', textX, margin + 42, { width: textW, align: 'center' });
 
       doc.fillColor('#e2e8f0').fontSize(8.5).font('Helvetica')
         .text('Classes 5th to 12th  •  Science (PCM / PCB) & Commerce  •  Indore (M.P.)', textX, margin + 58, { width: textW, align: 'center' });
 
       doc.fillColor('#cbd5e1').fontSize(8).font('Helvetica')
-        .text('📞 9827252114, 9301262721   |   ✉️ burhanitutorials1@gmail.com', textX, margin + 74, { width: textW, align: 'center' });
+        .text('Ph: 9827252114, 9301262721   |   Email: burhanitutorials1@gmail.com', textX, margin + 74, { width: textW, align: 'center' });
 
       // ── 2. RECEIPT TITLE BANNER (Gold accent) ──
       let currentY = margin + headerH;

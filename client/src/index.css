@@ -2,7 +2,7 @@
    BURHANI TUTORIALS — DESIGN SYSTEM v2 (Polished)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+/* Google Fonts loaded via preconnect + link in index.html for non-blocking performance */
 
 /* ── CSS VARIABLES ── */
 :root {
@@ -676,3 +676,41 @@ tbody td { padding: 13px 16px; font-size: var(--text-sm); color: var(--color-tex
 
 /* ── ADDITIONAL TOKENS ── */
 .color-bg-soft { background: var(--color-bg-soft); }
+
+/* ── PAGE LOADING (Suspense fallback) ── */
+.page-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: var(--space-md);
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  background: var(--color-bg);
+}
+
+/* ── MOBILE FORM INPUT FONT-SIZE FIX ── */
+/* Prevents iOS from auto-zooming when focusing inputs < 16px */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ── TOUCH TARGET FIX ── */
+/* Ensure phone/email links in top bar are tappable on mobile */
+.top-bar a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+

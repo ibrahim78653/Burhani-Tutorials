@@ -51,11 +51,11 @@ function ReceiptSheet({ data, isFormData = false }) {
       {/* Header */}
       <div className="a4-receipt-header">
         <div className="a4-logo-box">
-          <img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" />
+          <img src="/bt-logo.webp" alt="Burhani Tutorials Logo" />
         </div>
         <div className="a4-institute-details">
           <div className="a4-institute-title">BURHANI TUTORIALS</div>
-          <div className="a4-institute-tagline">{INSTITUTE_INFO.tagline}</div>
+          <div className="a4-institute-tagline">An Institute of Science &amp; Commerce</div>
           <div className="a4-institute-sub">Classes 5th to 12th • Science &amp; Commerce • Indore (M.P.)</div>
           <div className="a4-institute-contacts">
             📞 {INSTITUTE_INFO.phones.join(', ')} | ✉️ {INSTITUTE_INFO.email}

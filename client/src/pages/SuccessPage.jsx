@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import API from '../utils/api';
 import toast from 'react-hot-toast';
@@ -111,6 +112,12 @@ export default function SuccessPage() {
 
   return (
     <div className="success-preview-page">
+      <Helmet>
+        <title>Application Submitted — Burhani Tutorials</title>
+        <meta name="description" content="Your application has been received by Burhani Tutorials. Download your official form PDF below." />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
       <Navbar />
 
       {/* TOP CONFIRMATION BANNER */}
@@ -196,7 +203,7 @@ export default function SuccessPage() {
                 {/* Header */}
                 <div className="adm-header">
                   <div className="adm-header-logo">
-                    <img src="/bt-logo.jpeg" alt="Burhani Tutorials" className="adm-logo-img" />
+                    <img src="/bt-logo.webp" alt="Burhani Tutorials" className="adm-logo-img" />
                   </div>
 
                   <div className="adm-header-center">

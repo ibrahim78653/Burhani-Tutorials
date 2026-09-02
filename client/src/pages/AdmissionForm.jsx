@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import DocumentUploader from '../components/DocumentUploader';
 import API from '../utils/api';
@@ -131,6 +132,24 @@ export default function AdmissionForm() {
 
   return (
     <div className="admission-form-page">
+      <Helmet>
+        <title>Class {CLASS_LABELS[classId] || classId} Board Form — Burhani Tutorials Indore</title>
+        <meta name="description" content={`Online board examination registration form for Class ${CLASS_LABELS[classId] || classId} students at Burhani Tutorials, Indore. Fill in your personal and academic details securely.`} />
+        <link rel="canonical" href={`https://burhani-tutorials-indore.in/apply/${classId}`} />
+        <meta property="og:title" content={`Class ${CLASS_LABELS[classId] || classId} Board Form — Burhani Tutorials Indore`} />
+        <meta property="og:url" content={`https://burhani-tutorials-indore.in/apply/${classId}`} />
+        <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://burhani-tutorials-indore.in/' },
+            { '@type': 'ListItem', position: 2, name: 'Board Registration', item: 'https://burhani-tutorials-indore.in/select-class' },
+            { '@type': 'ListItem', position: 3, name: `Class ${CLASS_LABELS[classId]} Board Form`, item: `https://burhani-tutorials-indore.in/apply/${classId}` },
+          ],
+        })}</script>
+      </Helmet>
+
       <Navbar />
 
       {/* Page header */}

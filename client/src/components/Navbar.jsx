@@ -78,7 +78,7 @@ export default function Navbar({ onOpenAppointment, onOpenFreeSession }) {
           {/* Logo & Brand */}
           <Link to="/" className="navbar-brand" aria-label="Burhani Tutorials Home">
             <div className="navbar-logo">
-              <img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" />
+              <img src="/bt-logo.webp" alt="Burhani Tutorials Logo" />
             </div>
             <div className="navbar-brand-text">
               <div className="navbar-title">Burhani Tutorials</div>
@@ -205,7 +205,7 @@ export default function Navbar({ onOpenAppointment, onOpenFreeSession }) {
             <div className="mobile-drawer-header">
               <div className="navbar-brand">
                 <div className="navbar-logo">
-                  <img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" />
+                  <img src="/bt-logo.webp" alt="Burhani Tutorials Logo" />
                 </div>
                 <div>
                   <div className="navbar-title">Burhani Tutorials</div>

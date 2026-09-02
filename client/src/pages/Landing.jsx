@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Lightbox from '../components/Lightbox';
 import AppointmentModal from '../components/AppointmentModal';
@@ -14,6 +15,52 @@ import {
   GALLERY_ITEMS,
 } from '../data/instituteData';
 import './Landing.css';
+
+const SCHEMA_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': ['EducationalOrganization', 'LocalBusiness'],
+  name: 'Burhani Tutorials',
+  description: 'Coaching classes for Classes 5th to 12th in Indore. Science (PCM/PCB) and Commerce streams. Established in 1996.',
+  foundingDate: '1996',
+  url: 'https://burhani-tutorials-indore.in',
+  telephone: ['+919827252114', '+919301262721'],
+  email: 'burhanitutorials1@gmail.com',
+  address: [
+    {
+      '@type': 'PostalAddress',
+      streetAddress: '46, 47 Noorani Nagar, Dhar Road',
+      addressLocality: 'Indore',
+      addressRegion: 'Madhya Pradesh',
+      postalCode: '452001',
+      addressCountry: 'IN',
+    },
+    {
+      '@type': 'PostalAddress',
+      streetAddress: 'Plot No. 101, Scheme 102, Saify Nagar',
+      addressLocality: 'Indore',
+      addressRegion: 'Madhya Pradesh',
+      addressCountry: 'IN',
+    },
+    {
+      '@type': 'PostalAddress',
+      streetAddress: '616 Row House, Masakin-E-Saifiya',
+      addressLocality: 'Indore',
+      addressRegion: 'Madhya Pradesh',
+      addressCountry: 'IN',
+    },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Academic Coaching Programs',
+    itemListElement: [
+      { '@type': 'Course', name: 'Classes 5th–8th Foundation', description: 'Foundational coaching in Mathematics, Science, and Languages for Class 5th to 8th students.' },
+      { '@type': 'Course', name: 'Classes 9th–10th Board Preparation', description: 'Comprehensive board exam preparation for Class 9th and 10th students.' },
+      { '@type': 'Course', name: 'Science PCM — Class 11th & 12th', description: 'Physics, Chemistry, Mathematics coaching for engineering and pure science aspirants.' },
+      { '@type': 'Course', name: 'Science PCB — Class 11th & 12th', description: 'Physics, Chemistry, Biology coaching for medical and life science aspirants.' },
+      { '@type': 'Course', name: 'Commerce — Class 11th & 12th', description: 'Accounts, Business Studies, and Economics coaching for commerce students.' },
+    ],
+  },
+};
 
 export default function Landing() {
   // Modal states
@@ -75,6 +122,20 @@ export default function Landing() {
 
   return (
     <div className="landing-page">
+      <Helmet>
+        <title>Burhani Tutorials | Classes 5th to 12th | Indore</title>
+        <meta name="description" content="Burhani Tutorials — Established in 1996 in Indore. 5000+ students educated across 3 branches (Noorani Nagar, Saify Nagar, Masakin-E-Saifiya). Coaching for Classes 5th to 12th, Science (PCM/PCB) & Commerce." />
+        <link rel="canonical" href="https://burhani-tutorials-indore.in/" />
+        <meta property="og:title" content="Burhani Tutorials | Classes 5th to 12th | Indore" />
+        <meta property="og:description" content="Building strong foundations and brighter futures since 1996. Classes 5th to 12th across 3 branches in Indore." />
+        <meta property="og:url" content="https://burhani-tutorials-indore.in/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Burhani Tutorials | Classes 5th to 12th | Indore" />
+        <meta name="twitter:description" content="Building strong foundations and brighter futures since 1996. Classes 5th to 12th across 3 branches in Indore." />
+        <script type="application/ld+json">{JSON.stringify(SCHEMA_JSON_LD)}</script>
+      </Helmet>
+
       {/* Sticky Institutional Navbar */}
       <Navbar
         onOpenAppointment={() => openAppointment()}
@@ -171,6 +232,10 @@ export default function Landing() {
                         src={slide.image}
                         alt={slide.alt}
                         className="hero-main-img"
+                        width="800"
+                        height="560"
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        fetchpriority={index === 0 ? 'high' : 'low'}
                       />
                       <div className="hero-img-overlay" />
                       <div className="hero-overlay-tag">
@@ -582,14 +647,6 @@ export default function Landing() {
                     >
                       Book Appointment Here
                     </button>
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.mapQuery)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline btn-sm"
-                    >
-                      Get Directions ↗
-                    </a>
                   </div>
                 </div>
               </div>
@@ -835,14 +892,6 @@ export default function Landing() {
                   <div key={b.id} className="compact-branch-item">
                     <div className="compact-branch-header">
                       <span className="compact-branch-name">{b.name}</span>
-                      <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.mapQuery)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="compact-map-link"
-                      >
-                        Map ↗
-                      </a>
                     </div>
                     <div className="compact-branch-addr">{b.address}</div>
                     {b.landmark && <div className="compact-branch-landmark">Near: {b.landmark}</div>}
@@ -862,7 +911,7 @@ export default function Landing() {
             <div className="footer-col brand-col">
               <div className="footer-brand-header">
                 <div className="navbar-logo">
-                  <img src="/bt-logo.jpeg" alt="Burhani Tutorials Logo" />
+                  <img src="/bt-logo.webp" alt="Burhani Tutorials Logo" />
                 </div>
                 <div>
                   <div className="footer-brand-title">Burhani Tutorials</div>

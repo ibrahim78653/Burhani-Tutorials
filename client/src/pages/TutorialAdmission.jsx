@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import DocumentUploader from '../components/DocumentUploader';
 import API from '../utils/api';
@@ -113,6 +114,24 @@ export default function TutorialAdmission() {
 
   return (
     <div className="admission-page">
+      <Helmet>
+        <title>Admission Form — Burhani Tutorials Indore | Classes 5th to 12th</title>
+        <meta name="description" content="Apply online for coaching admission at Burhani Tutorials, Indore. Classes 5th to 12th — Science (PCM/PCB) and Commerce. 30+ years of excellence since 1996." />
+        <link rel="canonical" href="https://burhani-tutorials-indore.in/admission" />
+        <meta property="og:title" content="Admission Form — Burhani Tutorials Indore" />
+        <meta property="og:description" content="Apply online for coaching admission for Classes 5th to 12th at Burhani Tutorials, Indore." />
+        <meta property="og:url" content="https://burhani-tutorials-indore.in/admission" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://burhani-tutorials-indore.in/' },
+            { '@type': 'ListItem', position: 2, name: 'Admission Form', item: 'https://burhani-tutorials-indore.in/admission' },
+          ],
+        })}</script>
+      </Helmet>
+
       <Navbar />
 
       {/* Page Header */}
