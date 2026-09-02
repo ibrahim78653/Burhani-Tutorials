@@ -120,3 +120,24 @@
 }
 
 .form-nav-step-info { font-size: 13px; color: var(--color-text-muted); font-weight: 500; white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .form-nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .form-nav-inner > button {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .form-nav-step-info {
+    order: -1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+}

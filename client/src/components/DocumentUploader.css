@@ -1,10 +1,13 @@
-.doc-uploader { display: flex; flex-direction: column; }
+.doc-uploader { display: flex; flex-direction: column; width: 100%; min-width: 0; overflow: hidden; }
 .upload-preview-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
 .upload-preview-status { font-size: 11px; color: var(--color-success); font-weight: 600; margin-top: 2px; }
 .upload-preview-actions { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
 @media (min-width: 400px) { .upload-preview-actions { flex-direction: row; } }
-.upload-preview { flex-wrap: wrap; }
+.upload-preview { flex-wrap: wrap; width: 100%; overflow: hidden; box-sizing: border-box; }
+.upload-preview-info { min-width: 0; width: 100%; overflow: hidden; }
 @media (max-width: 399px) {
-  .upload-preview { flex-direction: column; }
-  .upload-preview img { width: 100%; height: 120px; }
+  .upload-preview { flex-direction: column; align-items: stretch; text-align: center; }
+  .upload-preview img { width: 100%; height: 120px; object-fit: cover; }
+  .upload-preview-actions { width: 100%; }
+  .upload-preview-actions button { width: 100%; }
 }
