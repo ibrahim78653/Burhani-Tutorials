@@ -28,6 +28,7 @@ const documentSchema = new mongoose.Schema({
 const studentSchema = new mongoose.Schema({
   applicationId: { type: String, unique: true, required: true },
   classApplied: { type: String, enum: ['9', '10', '11', '12'], required: true },
+  formType: { type: String, enum: ['Regular', 'Private'], required: true },
 
   // Personal
   studentName: { type: String, required: true },

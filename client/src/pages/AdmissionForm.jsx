@@ -36,6 +36,7 @@ export default function AdmissionForm() {
 
   const { register, handleSubmit, watch, formState: { errors }, trigger, getValues, setValue } = useForm({
     defaultValues: {
+      formType: 'Regular',
       state: 'Madhya Pradesh',
       residenceOfMP: 'Yes',
       gender: '',
@@ -59,7 +60,7 @@ export default function AdmissionForm() {
 
   // Step-specific required fields for validation
   const stepFields = {
-    personal: ['studentName', 'fatherName', 'motherName', 'dob', 'medium', 'gender', 'phone', 'ssmid', 'residenceOfMP'],
+    personal: ['formType', 'studentName', 'fatherName', 'motherName', 'dob', 'medium', 'gender', 'phone', 'ssmid', 'residenceOfMP'],
     address: ['addressLine', 'city', 'state', 'pinCode'],
     languages: classId <= '10'
       ? ['firstLanguage', 'secondLanguage', 'thirdLanguage']
@@ -187,6 +188,20 @@ export default function AdmissionForm() {
                 </div>
                 <div className="section-card-body">
                   <div className="form-grid form-grid-2">
+                    <div className="form-group full-width">
+                      <label className="form-label">Form Type <span className="required">*</span></label>
+                      <div className="radio-group">
+                        <label className="radio-label">
+                          <input type="radio" value="Regular" {...register('formType', { required: 'Form type is required' })} />
+                          <span className="radio-custom"></span> Regular
+                        </label>
+                        <label className="radio-label">
+                          <input type="radio" value="Private" {...register('formType', { required: 'Form type is required' })} />
+                          <span className="radio-custom"></span> Private
+                        </label>
+                      </div>
+                      {errors.formType && <p className="form-error">{errors.formType.message}</p>}
+                    </div>
                     <div className="form-group">
                       <label className="form-label">Student Name as per {nameDocLabel} <span className="required">*</span></label>
                       <input

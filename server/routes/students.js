@@ -31,7 +31,7 @@ router.post('/', upload.fields([
     const files = req.files || {};
 
     // Basic validation - SSMID is mandatory for all classes
-    const required = ['studentName', 'fatherName', 'motherName', 'dob', 'medium', 'gender', 'phone', 'classApplied', 'residenceOfMP', 'ssmid'];
+    const required = ['studentName', 'fatherName', 'motherName', 'dob', 'medium', 'gender', 'phone', 'classApplied', 'residenceOfMP', 'ssmid', 'formType'];
     for (const field of required) {
       if (!data[field] || !String(data[field]).trim()) {
         return res.status(400).json({ success: false, message: `${field} is required` });
@@ -91,6 +91,7 @@ router.post('/', upload.fields([
     const student = await Student.create({
       applicationId,
       classApplied: data.classApplied,
+      formType: data.formType,
       studentName: data.studentName.trim(),
       fatherName: data.fatherName.trim(),
       motherName: data.motherName.trim(),

@@ -279,6 +279,9 @@ export default function StudentProfile() {
               👤
             </div>
             <div className="student-banner-badge">Class {student.classApplied}th</div>
+            <div className="student-banner-badge" style={{ marginLeft: 8, background: '#c8a96e', color: '#fff' }}>
+              {student.formType || 'Regular'}
+            </div>
           </div>
 
           <div className="student-banner-main">
@@ -383,6 +386,7 @@ export default function StudentProfile() {
             <div className="profile-tab-content">
               <table className="review-table">
                 <tbody>
+                  <tr><th>Form Type</th><td><strong>{student.formType || 'Regular'}</strong></td></tr>
                   <tr><th>Student Name {['11', '12'].includes(student.classApplied) ? '(10th Marksheet)' : '(Aadhar)'}</th><td><strong>{student.studentName}</strong></td></tr>
                   <tr><th>Father's Name {['11', '12'].includes(student.classApplied) ? '(10th Marksheet)' : '(Aadhar)'}</th><td>{student.fatherName}</td></tr>
                   <tr><th>Mother's Name {['11', '12'].includes(student.classApplied) ? '(10th Marksheet)' : '(Aadhar)'}</th><td>{student.motherName}</td></tr>

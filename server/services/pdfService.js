@@ -96,7 +96,7 @@ function drawHeader(doc, student) {
   doc.rect(0, headerH, pageWidth, subBannerH).fill(COLORS.accent);
   doc.fillColor('#ffffff').fontSize(9.5).font('Helvetica-Bold')
     .text(`Application ID: ${student.applicationId}`, 30, headerH + 7)
-    .text(`Class: ${student.classApplied}th`, 270, headerH + 7);
+    .text(`Class: ${student.classApplied}th${student.formType ? ` (${student.formType})` : ''}`, 270, headerH + 7);
   doc.fillColor('#ffffff').fontSize(9.5).font('Helvetica-Bold')
     .text(`Date: ${new Date(student.createdAt || Date.now()).toLocaleDateString('en-IN')}`, 0, headerH + 7, { width: pageWidth - 30, align: 'right' });
 }
@@ -156,6 +156,7 @@ function renderStudentFormPage(doc, student) {
   // ── PERSONAL DETAILS ──
   y = drawSectionTitle(doc, 'PERSONAL DETAILS', y);
   y = drawTwoColumns(doc, [
+    ['Form Type', student.formType || 'Regular'],
     ['Student Name', student.studentName],
     ['Father\'s Name', student.fatherName],
     ['Mother\'s Name', student.motherName],
