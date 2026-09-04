@@ -26,7 +26,7 @@ export default function NotFound() {
           fontSize: '6rem',
           fontWeight: 800,
           lineHeight: 1,
-          background: 'linear-gradient(135deg, #1a3557, #c8a96e)',
+          background: 'linear-gradient(135deg, #0f172a, #10b981)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -42,7 +42,7 @@ export default function NotFound() {
         <h1 style={{
           fontSize: '1.75rem',
           fontWeight: 700,
-          color: 'var(--color-primary, #1a3557)',
+          color: 'var(--color-primary, #0f172a)',
           marginBottom: '12px',
           fontFamily: 'var(--font-sans)',
         }}>
@@ -79,8 +79,8 @@ export default function NotFound() {
         <div style={{ marginTop: '40px', color: 'var(--color-text-muted, #64748b)', fontSize: '0.875rem' }}>
           <p style={{ marginBottom: '8px' }}>Quick links:</p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link to="/admission" style={{ color: 'var(--color-primary, #1a3557)', textDecoration: 'underline' }}>Tutorial Admission</Link>
-            <Link to="/select-class" style={{ color: 'var(--color-primary, #1a3557)', textDecoration: 'underline' }}>Board Registration</Link>
+            <Link to="/admission" style={{ color: 'var(--color-primary, #0f172a)', textDecoration: 'underline' }}>Tutorial Admission</Link>
+            <Link to="/select-class" style={{ color: 'var(--color-primary, #0f172a)', textDecoration: 'underline' }}>Board Registration</Link>
             <Link to="/admin/login" style={{ color: 'var(--color-text-light, #94a3b8)', textDecoration: 'underline' }}>Admin Login</Link>
           </div>
         </div>

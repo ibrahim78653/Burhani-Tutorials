@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Burhani Tutorials — Student Board Form & Document Submission Portal",
   "scripts": {
+    "install": "cd client && npm install --include=dev && cd ../server && npm install",
+    "build": "npm run build:client",
+    "start": "npm run start:server",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
     "start:server": "cd server && npm start",

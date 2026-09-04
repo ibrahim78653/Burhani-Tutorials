@@ -279,7 +279,7 @@ export default function StudentProfile() {
               👤
             </div>
             <div className="student-banner-badge">Class {student.classApplied}th</div>
-            <div className="student-banner-badge" style={{ marginLeft: 8, background: '#c8a96e', color: '#fff' }}>
+            <div className="student-banner-badge" style={{ marginLeft: 8, background: '#10b981', color: '#fff' }}>
               {student.formType || 'Regular'}
             </div>
           </div>

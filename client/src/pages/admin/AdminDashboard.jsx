@@ -99,7 +99,7 @@ export default function AdminDashboard() {
       title="Admin Dashboard"
       actions={
         <div style={{ display: 'flex', gap: 8, flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: 2 }}>
-          <Link to="/admin/fees" className="btn btn-warning btn-sm" style={{ background: '#c8a96e', color: '#0f2238', fontWeight: 700, whiteSpace: 'nowrap', flexShrink: 0 }}>
+          <Link to="/admin/fees" className="btn btn-warning btn-sm" style={{ background: '#10b981', color: '#020617', fontWeight: 700, whiteSpace: 'nowrap', flexShrink: 0 }}>
             🧾 Fees (₹{(stats?.feeTotalReceived || 0).toLocaleString('en-IN')})
           </Link>
           <Link to="/admin/students" className="btn btn-accent btn-sm" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
@@ -123,10 +123,10 @@ export default function AdminDashboard() {
         <Link
           to="/admin/fees"
           className="stat-card stat-card-highlight"
-          style={{ textDecoration: 'none', borderLeft: '4px solid #c8a96e', background: 'linear-gradient(135deg, #ffffff 0%, #fdf8ed 100%)' }}
+          style={{ textDecoration: 'none', borderLeft: '4px solid #10b981', background: 'linear-gradient(135deg, #ffffff 0%, #d1fae5 100%)' }}
         >
           <div style={{ flex: 1 }}>
-            <div className="stat-number" style={{ color: '#0f2238' }}>
+            <div className="stat-number" style={{ color: '#020617' }}>
               ₹ {(stats?.feeTotalReceived || 0).toLocaleString('en-IN')}
             </div>
             <div className="stat-label" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
         <Link
           to="/admin/appointments"
           className="stat-card stat-card-highlight"
-          style={{ textDecoration: 'none', borderLeft: '4px solid #c8a96e' }}
+          style={{ textDecoration: 'none', borderLeft: '4px solid #10b981' }}
         >
           <div>
             <div className="stat-number">{totalAppointments}</div>
@@ -276,7 +276,7 @@ export default function AdminDashboard() {
                   {recentAppointments.map((appt) => (
                     <tr key={appt._id}>
                       <td>
-                        <strong style={{ fontFamily: 'monospace', color: '#1a3557' }}>
+                        <strong style={{ fontFamily: 'monospace', color: '#0f172a' }}>
                           {appt.appointmentId}
                         </strong>
                       </td>
@@ -336,7 +336,7 @@ export default function AdminDashboard() {
                   {recentFreeSessions.map((sess) => (
                     <tr key={sess._id}>
                       <td>
-                        <strong style={{ fontFamily: 'monospace', color: '#c8a96e' }}>
+                        <strong style={{ fontFamily: 'monospace', color: '#10b981' }}>
                           {sess.requestId}
                         </strong>
                       </td>
@@ -463,7 +463,7 @@ export default function AdminDashboard() {
             </Link>
 
             <Link to="/admin/admissions" className="quick-action-btn">
-              <div className="qa-icon" style={{ background: '#eff6ff', color: '#1d4ed8' }}>📝</div>
+              <div className="qa-icon" style={{ background: '#eff6ff', color: '#000000' }}>📝</div>
               <div className="qa-text">
                 <div className="qa-title">Manage Admission Forms</div>
                 <div className="qa-desc">View, filter, edit status and export admission applications</div>

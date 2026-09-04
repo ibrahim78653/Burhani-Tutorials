@@ -39,7 +39,7 @@
 }
 
 .search-box .search-input:focus {
-  border-color: #1a3557 !important;
+  border-color: #0f172a !important;
   box-shadow: 0 0 0 3px rgba(26,53,87,0.08) !important;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .clear-search-btn:hover {
-  color: #1a3557;
+  color: #0f172a;
 }
 
 .action-buttons-group {
@@ -111,7 +111,7 @@
 }
 
 .search-input:focus {
-  border-color: #1a3557 !important;
+  border-color: #0f172a !important;
   box-shadow: 0 0 0 3px rgba(26,53,87,0.08) !important;
 }
 
@@ -131,7 +131,7 @@
 }
 
 .search-clear-btn:hover {
-  color: #1a3557;
+  color: #0f172a;
 }
 
 /* ── CLASS PILL FILTERS ── */
@@ -163,14 +163,14 @@
 }
 
 .class-pill:hover {
-  border-color: #1a3557;
-  color: #1a3557;
+  border-color: #0f172a;
+  color: #0f172a;
   background: #f0f5ff;
 }
 
 .class-pill.active {
   background: #0a1628;
-  color: #c8a96e;
+  color: #10b981;
   border-color: #0a1628;
   box-shadow: 0 2px 8px rgba(10, 22, 40, 0.25);
 }
@@ -217,7 +217,7 @@
 .app-id-link {
   font-family: 'SF Mono', 'Fira Code', monospace;
   font-weight: 700;
-  color: #1a3557;
+  color: #0f172a;
   font-size: 0.82rem;
   background: #edf4fc;
   padding: 3px 8px;

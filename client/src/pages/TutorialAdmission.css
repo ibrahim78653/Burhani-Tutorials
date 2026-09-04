@@ -28,8 +28,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(200, 169, 110, 0.2);
-  border: 1px solid rgba(200, 169, 110, 0.4);
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
   color: var(--color-accent-light);
   font-size: var(--text-xs);
   font-weight: 600;
@@ -98,7 +98,7 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
-  background: rgba(26, 53, 87, 0.08);
+  background: rgba(15, 23, 42, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,14 +154,14 @@
   font-size: var(--text-base);
   font-weight: 700;
   border-radius: var(--radius-xl);
-  box-shadow: 0 4px 14px rgba(200, 169, 110, 0.35);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
   cursor: pointer;
   transition: all var(--transition);
 }
 
 .submit-admission-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(200, 169, 110, 0.5);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
 .admission-alt-link {

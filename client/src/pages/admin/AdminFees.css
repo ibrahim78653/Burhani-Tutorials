@@ -50,10 +50,10 @@
   opacity: 0.6;
 }
 
-.fee-stat-total::before { background: linear-gradient(90deg, #1a3557, #2a5090); }
+.fee-stat-total::before { background: linear-gradient(90deg, #0f172a, #334155); }
 .fee-stat-form::before  { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
 .fee-stat-tuition::before { background: linear-gradient(90deg, #059669, #34d399); }
-.fee-stat-receipts::before { background: linear-gradient(90deg, #c8a96e, #e8d4a8); }
+.fee-stat-receipts::before { background: linear-gradient(90deg, #10b981, #34d399); }
 
 .fee-stat-card:hover {
   transform: translateY(-3px);
@@ -64,7 +64,7 @@
 .fee-stat-total { background: linear-gradient(135deg, #fff 0%, #f0f5ff 100%); }
 .fee-stat-form  { background: linear-gradient(135deg, #fff 0%, #f5f3ff 100%); }
 .fee-stat-tuition { background: linear-gradient(135deg, #fff 0%, #ecfdf5 100%); }
-.fee-stat-receipts { background: linear-gradient(135deg, #fff 0%, #fdf8ed 100%); }
+.fee-stat-receipts { background: linear-gradient(135deg, #fff 0%, #d1fae5 100%); }
 
 .fee-stat-icon {
   font-size: 1.4rem;
@@ -87,7 +87,7 @@
 .fee-stat-amount {
   font-size: 1.15rem;
   font-weight: 800;
-  color: #1a3557;
+  color: #0f172a;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
@@ -97,7 +97,7 @@
 
 .fee-stat-form .fee-stat-amount  { color: #6d28d9; }
 .fee-stat-tuition .fee-stat-amount { color: #047857; }
-.fee-stat-receipts .fee-stat-amount { color: #0f2238; font-size: 1.5rem; }
+.fee-stat-receipts .fee-stat-amount { color: #020617; font-size: 1.5rem; }
 
 .fee-stat-label {
   font-size: 0.72rem;
@@ -110,7 +110,7 @@
 
 .fee-stat-sub {
   font-size: 0.68rem;
-  color: #94a3b8;
+  color: #000000;
   margin-top: 2px;
 }
 
@@ -196,14 +196,14 @@
 }
 
 .fee-cat-pill:hover {
-  border-color: var(--color-primary, #1a3557);
-  color: var(--color-primary, #1a3557);
+  border-color: var(--color-primary, #0f172a);
+  color: var(--color-primary, #0f172a);
   background: #f0f7ff;
 }
 
 .fee-cat-pill.active {
-  background: var(--color-primary, #1a3557);
-  border-color: var(--color-primary, #1a3557);
+  background: var(--color-primary, #0f172a);
+  border-color: var(--color-primary, #0f172a);
   color: #fff;
 }
 
@@ -308,7 +308,7 @@
 .fee-empty-state h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   margin: 0;
 }
 
@@ -347,7 +347,7 @@
   font-family: 'Courier New', monospace;
   font-weight: 700;
   font-size: 0.8rem;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   background: #f0f7ff;
   padding: 3px 7px;
   border-radius: 5px;
@@ -357,7 +357,7 @@
 .fee-amount-cell {
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   white-space: nowrap;
 }
 
@@ -400,7 +400,7 @@
 .fee-mc-student {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
 }
 
 .fee-mc-meta {
@@ -423,7 +423,7 @@
 .fee-mc-amount {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
 }
 
 .fee-mc-date {
@@ -564,7 +564,7 @@
 .fee-modal-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -584,7 +584,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.15s ease;
-  color: #64748b;
+  color: #000000;
 }
 
 .fee-modal-close:hover {
@@ -608,7 +608,7 @@
   border-radius: 50%;
   background: #f1f5f9;
   border: 2px solid #e2e8f0;
-  color: #94a3b8;
+  color: #000000;
   font-size: 0.75rem;
   font-weight: 700;
   display: flex;
@@ -618,10 +618,10 @@
 }
 
 .step-dot.active {
-  background: var(--color-primary, #1a3557);
-  border-color: var(--color-primary, #1a3557);
+  background: var(--color-primary, #0f172a);
+  border-color: var(--color-primary, #0f172a);
   color: #fff;
-  box-shadow: 0 2px 6px rgba(26, 53, 87, 0.3);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.3);
 }
 
 .step-dot.done {
@@ -692,7 +692,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   margin-bottom: 16px;
 }
 
@@ -700,7 +700,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--color-primary, #1a3557);
+  background: var(--color-primary, #0f172a);
   color: #fff;
   font-size: 0.72rem;
   font-weight: 800;
@@ -756,7 +756,7 @@
   padding: 11px 16px;
   font-size: 0.9rem;
   font-family: inherit;
-  color: #1e293b;
+  color: #000000;
   background-color: #ffffff;
   border: 1.5px solid #dbe2ea;
   border-radius: 12px;
@@ -773,9 +773,9 @@
 }
 
 .form-control:focus {
-  border-color: var(--color-primary, #1a3557);
+  border-color: var(--color-primary, #0f172a);
   background-color: #ffffff;
-  box-shadow: 0 0 0 3.5px rgba(26, 53, 87, 0.1);
+  box-shadow: 0 0 0 3.5px rgba(15, 23, 42, 0.1);
 }
 
 select.form-control {
@@ -810,7 +810,7 @@ select.form-control:focus {
 .form-control-amount {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
 }
 
 .form-control-mono {
@@ -827,7 +827,7 @@ select.form-control:focus {
 }
 
 .req { color: #ef4444; font-weight: 700; margin-left: 2px; }
-.form-optional { color: #94a3b8; font-weight: 400; font-size: 0.8em; text-transform: none; }
+.form-optional { color: #000000; font-weight: 400; font-size: 0.8em; text-transform: none; }
 
 /* ── FEE ITEMS ── */
 .fee-items-list {
@@ -907,7 +907,7 @@ select.form-control:focus {
   border: 2px dashed #cbd5e1;
   border-radius: 14px;
   background: #ffffff;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
@@ -915,7 +915,7 @@ select.form-control:focus {
 }
 
 .fee-add-item-btn:hover {
-  border-color: var(--color-primary, #1a3557);
+  border-color: var(--color-primary, #0f172a);
   background: #f0f5ff;
   transform: translateY(-1px);
 }
@@ -925,8 +925,8 @@ select.form-control:focus {
   margin-top: 14px;
   padding: 16px 20px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #fdf8ed 0%, #fef9ec 100%);
-  border: 1.5px solid #c8a96e;
+  background: linear-gradient(135deg, #d1fae5 0%, #fef9ec 100%);
+  border: 1.5px solid #10b981;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -944,7 +944,7 @@ select.form-control:focus {
 .fee-live-total-amount {
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
   flex: 1;
 }
 
@@ -969,7 +969,7 @@ select.form-control:focus {
 
 /* ── HEADER ── */
 .a4-receipt-header {
-  background: #1a3557;
+  background: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -984,7 +984,7 @@ select.form-control:focus {
   flex-shrink: 0;
   background: #fff;
   border-radius: 8px;
-  border: 2px solid #c8a96e;
+  border: 2px solid #10b981;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1040,7 +1040,7 @@ select.form-control:focus {
 .a4-institute-tagline {
   font-size: 0.65rem;
   font-weight: 700;
-  color: #c8a96e;
+  color: #10b981;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 2px;
@@ -1048,7 +1048,7 @@ select.form-control:focus {
 
 .a4-institute-sub {
   font-size: 0.62rem;
-  color: #94a3b8;
+  color: #000000;
   margin-top: 2px;
 }
 
@@ -1060,7 +1060,7 @@ select.form-control:focus {
 
 /* ── BANNER ── */
 .a4-banner-bar {
-  background: #c8a96e;
+  background: #10b981;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1070,7 +1070,7 @@ select.form-control:focus {
 .a4-banner-bar > span:first-child {
   font-size: 0.8rem;
   font-weight: 800;
-  color: #0f2238;
+  color: #020617;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1078,7 +1078,7 @@ select.form-control:focus {
 .a4-banner-category {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #0f2238;
+  color: #020617;
 }
 
 /* ── META BAR ── */
@@ -1095,14 +1095,14 @@ select.form-control:focus {
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #64748b;
+  color: #000000;
   font-weight: 600;
 }
 
 .a4-meta-item .value {
   font-size: 0.95rem;
   font-weight: 800;
-  color: #1a3557;
+  color: #0f172a;
   margin-top: 1px;
 }
 
@@ -1110,7 +1110,7 @@ select.form-control:focus {
 
 /* ── SECTION HEADINGS ── */
 .a4-section-heading {
-  background: #1a3557;
+  background: #0f172a;
   color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -1136,7 +1136,7 @@ select.form-control:focus {
 
 .a4-table .label-col {
   background: #f1f5f9;
-  color: #64748b;
+  color: #000000;
   font-weight: 600;
   font-size: 0.72rem;
   width: 40%;
@@ -1144,13 +1144,13 @@ select.form-control:focus {
 
 .a4-table .val-col {
   font-weight: 700;
-  color: #1a3557;
+  color: #0f172a;
 }
 
 /* Payment table specific */
 .a4-payment-table th {
   background: #e2e8f0;
-  color: #1e293b;
+  color: #000000;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1163,7 +1163,7 @@ select.form-control:focus {
   width: 100px;
   text-align: right;
   font-weight: 800;
-  color: #1a3557;
+  color: #0f172a;
 }
 
 @media (min-width: 640px) {
@@ -1193,7 +1193,7 @@ select.form-control:focus {
 
 .fee-item-note {
   font-size: 0.68rem;
-  color: #64748b;
+  color: #000000;
   font-style: italic;
 }
 
@@ -1206,8 +1206,8 @@ select.form-control:focus {
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background: #fdf8ed;
-  border: 1.5px solid #c8a96e;
+  background: #d1fae5;
+  border: 1.5px solid #10b981;
   margin: 0;
 }
 
@@ -1222,7 +1222,7 @@ select.form-control:focus {
 .a4-total-val {
   font-size: 1.2rem;
   font-weight: 800;
-  color: #1a3557;
+  color: #0f172a;
 }
 
 @media (min-width: 640px) {
@@ -1248,7 +1248,7 @@ select.form-control:focus {
 }
 
 .a4-words-row span {
-  color: #1e293b;
+  color: #000000;
   font-style: italic;
 }
 
@@ -1261,7 +1261,7 @@ select.form-control:focus {
   color: #475569;
 }
 
-.a4-remarks-row strong { color: #1e293b; }
+.a4-remarks-row strong { color: #000000; }
 
 /* ── BOTTOM SECTION ── */
 .a4-bottom-section {
@@ -1275,7 +1275,7 @@ select.form-control:focus {
 .a4-terms-box {
   flex: 1;
   font-size: 0.68rem;
-  color: #64748b;
+  color: #000000;
   line-height: 1.6;
   padding: 8px 10px;
   background: #f8fafc;
@@ -1300,7 +1300,7 @@ select.form-control:focus {
 
 .a4-signature-line {
   height: 1px;
-  background: #1a3557;
+  background: #0f172a;
   margin-bottom: 6px;
   width: 100%;
 }
@@ -1308,12 +1308,12 @@ select.form-control:focus {
 .a4-signature-label {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #1a3557;
+  color: #0f172a;
 }
 
 .a4-signature-sub {
   font-size: 0.65rem;
-  color: #64748b;
+  color: #000000;
 }
 
 /* ── DELETE DIALOG ── */
@@ -1334,7 +1334,7 @@ select.form-control:focus {
 .delete-dialog-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-primary, #1a3557);
+  color: var(--color-primary, #0f172a);
 }
 
 .delete-dialog-desc {
@@ -1370,7 +1370,7 @@ select.form-control:focus {
 
 .delete-receipt-row .v { color: var(--color-text, #1e293b); font-weight: 600; }
 .delete-receipt-row .v.mono { font-family: monospace; font-size: 0.9rem; }
-.delete-receipt-row .v.primary { color: var(--color-primary, #1a3557); }
+.delete-receipt-row .v.primary { color: var(--color-primary, #0f172a); }
 
 /* ── DANGER BUTTON ── */
 .btn-danger {

@@ -310,7 +310,7 @@ export default function Landing() {
               <div className="about-image-stack">
                 <div className="about-img-primary-wrap">
                   <img
-                    src="/photos/about-2.1.jpeg"
+                    src="/photos/about-hero.jpeg"
                     alt="Classroom teaching and students at Burhani Tutorials"
                     className="about-img-primary"
                   />
@@ -556,28 +556,14 @@ export default function Landing() {
 
           <div className="teachers-grid">
             {TEACHERS.map((teacher) => (
-              <div key={teacher.id} className="teacher-card">
-                <div className="teacher-avatar-wrap">
-                  {teacher.image ? (
-                    <img src={teacher.image} alt={teacher.name} className="teacher-photo" />
-                  ) : (
-                    <div className="teacher-placeholder-avatar">
-                      <div className="teacher-initials">{teacher.initials}</div>
-                      <div className="teacher-mortarboard">🎓</div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="teacher-details">
-                  <span className="teacher-role-badge">{teacher.role}</span>
-                  <h3 className="teacher-name">{teacher.name}</h3>
-                  <div className="teacher-focus">{teacher.focus}</div>
-                  <div className="teacher-quote">
-                    <span className="quote-mark">“</span>
-                    {teacher.statement}
-                    <span className="quote-mark">”</span>
-                  </div>
-                </div>
+              <div key={teacher.id} className="partner-poster-container">
+                {teacher.image && (
+                  <img 
+                    src={teacher.image} 
+                    alt={teacher.name} 
+                    className="partner-poster-img"
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -803,7 +789,7 @@ export default function Landing() {
                   <span>Class 11th</span>
                   <span>Class 12th</span>
                 </div>
-                <Link to="/select-class" className="btn btn-primary btn-md btn-block" style={{ background: '#0f2238' }}>
+                <Link to="/select-class" className="btn btn-primary btn-md btn-block" style={{ background: '#020617' }}>
                   Start Board Form →
                 </Link>
               </div>
@@ -865,6 +851,22 @@ export default function Landing() {
                     </a>
                   </div>
                 </div>
+
+                <div className="contact-info-card">
+                  <div className="contact-card-icon">📸</div>
+                  <div>
+                    <div className="contact-card-label">Official Instagram Page:</div>
+                    <a
+                      href="https://www.instagram.com/burhani_tutorial?utm_source=qr&igsi=dWlsczd6MXJ1djJl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="email-link"
+                      style={{ color: 'var(--color-primary)' }}
+                    >
+                      @burhani_tutorial
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="contact-cta-buttons">
@@ -923,6 +925,18 @@ export default function Landing() {
               </p>
               <div className="footer-legacy-tag">
                 <span>🏆 5000+ Students Educated</span>
+              </div>
+              <div className="footer-social-links" style={{ marginTop: '24px' }}>
+                <a 
+                  href="https://www.instagram.com/burhani_tutorial?utm_source=qr&igsi=dWlsczd6MXJ1djJl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-icon-link"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ffffff', textDecoration: 'none', fontWeight: 500, padding: '8px 16px', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '20px', transition: 'all 0.2s ease' }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  <span>Follow us on Instagram</span>
+                </a>
               </div>
             </div>
 

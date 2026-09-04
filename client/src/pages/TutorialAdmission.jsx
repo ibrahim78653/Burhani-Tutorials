@@ -347,7 +347,7 @@ export default function TutorialAdmission() {
                 border: '1px solid #bfdbfe',
                 borderRadius: 8,
                 fontSize: '0.85rem',
-                color: '#1e40af',
+                color: '#000000',
                 lineHeight: 1.6,
               }}>
                 ✍️ <strong>Parent / Guardian Signature:</strong> A blank signature box is included in your printed admission form. Please get the signature from your parent/guardian and submit the signed form to the institute.

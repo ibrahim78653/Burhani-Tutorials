@@ -298,7 +298,7 @@ export default function FreeSessionModal({ isOpen, onClose, initialBranch = '', 
                   type="submit"
                   disabled={loading}
                   className="btn btn-primary btn-lg btn-block"
-                  style={{ background: '#0f2238', color: '#c8a96e', borderColor: '#c8a96e' }}
+                  style={{ background: '#020617', color: '#10b981', borderColor: '#10b981' }}
                 >
                   {loading ? 'Registering Trial...' : 'Get 2-Day Free Session →'}
                 </button>

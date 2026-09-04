@@ -133,7 +133,7 @@ export default function AdmissionProfile() {
   
   const statusColors = {
     submitted: { bg: '#fef9c3', text: '#854d0e', border: '#fde047' },
-    under_review: { bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' },
+    under_review: { bg: '#dbeafe', text: '#1e293b', border: '#93c5fd' },
     approved: { bg: '#dcfce7', text: '#14532d', border: '#86efac' },
     rejected: { bg: '#fee2e2', text: '#7f1d1d', border: '#fca5a5' },
   };

@@ -83,7 +83,7 @@
 .stat-number {
   font-size: 1.1rem;
   font-weight: 800;
-  color: #0f2238;
+  color: #020617;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
@@ -117,7 +117,7 @@
 /* ── SECTION HEADINGS ── */
 .dashboard-section-heading {
   font-size: 1rem;
-  color: #0f2238;
+  color: #020617;
   margin-bottom: 2px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -199,8 +199,8 @@
 
 .quick-action-btn:hover {
   background: #fff;
-  border-color: #c8a96e;
-  box-shadow: 0 4px 16px rgba(200, 169, 110, 0.12);
+  border-color: #10b981;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.12);
   transform: translateX(3px);
 }
 
@@ -223,7 +223,7 @@
 .qa-title {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0f2238;
+  color: #020617;
 }
 
 .qa-desc {
@@ -236,7 +236,7 @@
 }
 
 .qa-arrow {
-  color: #c8a96e;
+  color: #10b981;
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -255,7 +255,7 @@
 }
 
 .empty-state h4 {
-  color: #334155;
+  color: #000000;
   font-size: 1rem;
   margin-bottom: 6px;
   font-weight: 600;
@@ -282,7 +282,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.82rem;
-  color: #334155;
+  color: #000000;
   font-weight: 500;
 }
 

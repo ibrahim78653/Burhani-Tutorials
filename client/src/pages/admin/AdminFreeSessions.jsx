@@ -214,7 +214,7 @@ export default function AdminFreeSessions() {
               {sessions.map((sess) => (
                 <tr key={sess._id} className={selectedSession?._id === sess._id ? 'selected-row' : ''}>
                   <td>
-                    <span className="appt-id-badge" style={{ borderColor: '#c8a96e', color: '#0f2238' }}>
+                    <span className="appt-id-badge" style={{ borderColor: '#10b981', color: '#020617' }}>
                       {sess.requestId}
                     </span>
                   </td>

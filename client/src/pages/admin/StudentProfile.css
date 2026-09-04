@@ -32,7 +32,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
-  border: 2px solid rgba(200, 169, 110, 0.5);
+  border: 2px solid rgba(16, 185, 129, 0.5);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -62,14 +62,14 @@
   left: 50%;
   transform: translateX(-50%);
   background: #0a1628;
-  color: #c8a96e;
+  color: #10b981;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 3px 12px;
   border-radius: 20px;
   white-space: nowrap;
   letter-spacing: 0.05em;
-  border: 1px solid rgba(200, 169, 110, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 /* ── MAIN INFO ── */
@@ -95,7 +95,7 @@
 
 .student-banner-name {
   font-size: 1.5rem;
-  color: #0f2238;
+  color: #020617;
   margin-bottom: 6px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -166,7 +166,7 @@
 
 .profile-subheading {
   font-size: 0.9rem;
-  color: #1a3557;
+  color: #0f172a;
   margin-bottom: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -285,7 +285,7 @@
 .doc-card-filename {
   font-size: 0.84rem;
   font-weight: 600;
-  color: #0f2238;
+  color: #020617;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

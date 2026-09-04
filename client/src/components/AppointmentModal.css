@@ -31,7 +31,7 @@
   max-height: 92vh;
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30), 0 8px 20px rgba(0,0,0,0.15);
-  border: 1px solid rgba(200, 169, 110, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -45,7 +45,7 @@
 .free-session-header {
   display: block !important;
   padding: 24px 28px 20px !important;
-  background: linear-gradient(135deg, #0f2238 0%, #1a3557 100%) !important;
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
   color: #ffffff !important;
   position: relative !important;
   border-top-left-radius: calc(var(--radius-2xl) - 1px);
@@ -60,9 +60,9 @@
   gap: 8px;
   font-size: 0.76rem;
   font-weight: 600;
-  color: #c8a96e;
-  background: rgba(200, 169, 110, 0.15);
-  border: 1px solid rgba(200, 169, 110, 0.3);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   padding: 4px 12px;
   border-radius: 20px;
   margin-bottom: 12px;
@@ -74,7 +74,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #c8a96e;
+  background: #10b981;
 }
 
 .modal-title {
@@ -138,7 +138,7 @@
   display: block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #000000;
   margin-bottom: 6px;
 }
 
@@ -155,7 +155,7 @@
   border: 1.5px solid #cbd5e1;
   border-radius: 8px;
   background: #ffffff;
-  color: #1e293b;
+  color: #000000;
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
@@ -163,8 +163,8 @@
 .form-input:focus,
 .form-select:focus {
   outline: none;
-  border-color: #1a3557;
-  box-shadow: 0 0 0 3px rgba(26, 53, 87, 0.12);
+  border-color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.12);
 }
 
 .input-prefix-wrap {
@@ -179,14 +179,14 @@
 
 .input-prefix-wrap:focus-within {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(26, 53, 87, 0.10);
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.10);
 }
 
 .input-prefix {
   padding: 0 12px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #64748b;
+  color: #000000;
   background: #e2e8f0;
   height: 44px;
   display: flex;
@@ -265,7 +265,7 @@
 .success-heading {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f2238;
+  color: #020617;
   margin: 0 0 8px;
 }
 
@@ -282,7 +282,7 @@
   align-items: center;
   gap: 8px;
   background: #f8fafc;
-  border: 1.5px dashed #c8a96e;
+  border: 1.5px dashed #10b981;
   padding: 8px 18px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -290,14 +290,14 @@
 
 .success-id-label {
   font-size: 0.85rem;
-  color: #64748b;
+  color: #000000;
   font-weight: 500;
 }
 
 .success-id-val {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a3557;
+  color: #0f172a;
   letter-spacing: 0.5px;
 }
 
@@ -323,11 +323,11 @@
 }
 
 .success-row span {
-  color: #64748b;
+  color: #000000;
 }
 
 .success-row strong {
-  color: #1e293b;
+  color: #000000;
 }
 
 .success-actions {

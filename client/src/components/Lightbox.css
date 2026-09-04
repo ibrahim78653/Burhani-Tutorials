@@ -29,8 +29,8 @@
   max-height: 94vh;
   display: flex;
   flex-direction: column;
-  background: #0f2238;
-  border: 1px solid rgba(200, 169, 110, 0.3);
+  background: #020617;
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
@@ -55,8 +55,8 @@
 .lightbox-counter {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #c8a96e;
-  background: rgba(200, 169, 110, 0.12);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
   padding: 4px 10px;
   border-radius: 20px;
   letter-spacing: 0.5px;
@@ -83,7 +83,7 @@
 .lightbox-category-badge {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #000000;
   background: rgba(255, 255, 255, 0.08);
   padding: 2px 8px;
   border-radius: 4px;
@@ -149,7 +149,7 @@
   border-radius: 50%;
   background: rgba(15, 34, 56, 0.75);
   color: #ffffff;
-  border: 1px solid rgba(200, 169, 110, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,9 +162,9 @@
 }
 
 .lightbox-nav-btn:hover {
-  background: #c8a96e;
-  color: #0f2238;
-  border-color: #c8a96e;
+  background: #10b981;
+  color: #020617;
+  border-color: #10b981;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -178,7 +178,7 @@
 
 .lightbox-footer {
   padding: 14px 24px;
-  background: #0f2238;
+  background: #020617;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
